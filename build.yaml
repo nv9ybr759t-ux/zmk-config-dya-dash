@@ -1,0 +1,79 @@
+include:
+# V1 & V2
+  - artifact: v2_right_trackball
+    board: xiao_ble//zmk
+    shield: dya_dash_right
+    snippets:
+      - studio-rpc-usb-uart
+      - dya-dash-right-trackball
+
+  - artifact: v2_right
+    board: xiao_ble//zmk
+    shield: dya_dash_right
+    snippets:
+      - studio-rpc-usb-uart
+
+  - artifact: v2_left_trackball
+    board: xiao_ble//zmk
+    shield: dya_dash_left
+    snippets:
+      - dya-dash-left-trackball
+
+  - artifact: v2_left
+    board: xiao_ble//zmk
+    shield: dya_dash_left
+
+  - artifact: v2_right_reset
+    board: xiao_ble//zmk
+    shield: dya_dash_right
+    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y
+
+  - artifact: v2_left_reset
+    board: xiao_ble//zmk
+    shield: dya_dash_left
+    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y
+
+# V3
+  - artifact: v3_right_trackball
+    board: xiao_ble//zmk
+    shield: dya_dash_v3_right
+    snippets:
+      - studio-rpc-usb-uart
+      - right-trackball-v3
+  - artifact: v3_right_switch
+    board: xiao_ble//zmk
+    shield: dya_dash_v3_right
+    snippets:
+      - studio-rpc-usb-uart
+      - right-switch-v3
+  - artifact: v3_right_encoder
+    board: xiao_ble//zmk
+    shield: dya_dash_v3_right
+    snippets:
+      - studio-rpc-usb-uart
+      - right-encoder-v3
+  - artifact: v3_right_reset
+    board: xiao_ble//zmk
+    shield: dya_dash_v3_right
+    snippets:
+      - studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y
+  - artifact: v3_left_trackball
+    board: xiao_ble//zmk
+    shield: dya_dash_v3_left
+    snippets:
+      - left-trackball-v3
+  - artifact: v3_left_switch
+    board: xiao_ble//zmk
+    shield: dya_dash_v3_left
+    snippets:
+      - left-switch-v3
+  - artifact: v3_left_encoder
+    board: xiao_ble//zmk
+    shield: dya_dash_v3_left
+    snippets:
+      - left-encoder-v3
+  - artifact: v3_left_reset
+    board: xiao_ble//zmk
+    shield: dya_dash_v3_left
+    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y

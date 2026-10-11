@@ -1,0 +1,16 @@
+
+if SHIELD_DYA_DASH_V3_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "DYA Dash V3"
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+endif
+
+if SHIELD_DYA_DASH_V3_LEFT || SHIELD_DYA_DASH_V3_RIGHT
+config ZMK_SPLIT
+    default y
+
+config ZMK_KSCAN_CHARLIEPLEX_WAIT_BEFORE_INPUTS
+    default 20
+endif
