@@ -37,13 +37,13 @@ layers:
   - ','
   - .
   - /
-  - Config
+  - {t: ESC, h: Config}
   - LWIN
   - LALT
   - SPACE
-  - Left
-  - Right
-  - SPACE
+  - {t: LANG1, h: Num}
+  - {t: ENTER, h: Nav}
+  - {t: BACKSPACE, s: DELETE}
   - RALT
   - RWIN
   - OUT TOG
@@ -101,8 +101,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: LANG2, h: LALT}
   - {t: ▽, type: trans}
-  - {t: LANG2, h: Left}
-  - {t: LANG1, h: Right}
+  - {t: LANG1, h: Num}
+  - {t: ENTER, h: Nav}
   - {t: ▽, type: trans}
   - {t: LANG1, h: RALT}
   - {t: ▽, type: trans}
@@ -161,8 +161,8 @@ layers:
   - LALT
   - {t: LANG2, h: LCMD}
   - {t: ▽, type: trans}
-  - {t: LANG2, h: Left}
-  - {t: LANG1, h: Right}
+  - {t: LANG1, h: Num}
+  - {t: ENTER, h: Nav}
   - {t: ▽, type: trans}
   - {t: LANG1, h: RCMD}
   - RALT
@@ -221,8 +221,8 @@ layers:
   - LALT
   - {t: LANG2, h: LCMD}
   - {t: ▽, type: trans}
-  - {t: LANG2, h: Left}
-  - {t: LANG1, h: Right}
+  - {t: LANG1, h: Num}
+  - {t: ENTER, h: Nav}
   - {t: ▽, type: trans}
   - {t: LANG1, h: RCMD}
   - RALT
@@ -300,20 +300,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  Left:
+  Num:
   - ESC
-  - '!'
-  - '@'
-  - '#'
-  - $
-  - '%'
-  - ^
-  - '&'
-  - '*'
-  - (
-  - )
-  - ']'
-  - {t: ▽, type: trans}
   - '1'
   - '2'
   - '3'
@@ -324,24 +312,38 @@ layers:
   - '8'
   - '9'
   - '0'
-  - \
+  - '-'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
   - '`'
   - '-'
   - '='
   - '['
   - ']'
-  - RSHIFT
+  - \
+  - {t: ▽, type: trans}
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - '~'
+  - _
+  - +
+  - '{'
+  - '}'
+  - '|'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
+  - ENTER
+  - DEL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -358,20 +360,18 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  Right:
-  - {t: ▽, type: trans}
+  Nav:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - HOME
   - PG UP
   - ↑
   - PG DN
-  - {t: ▽, type: trans}
+  - END
   - AL LOCK
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -383,7 +383,7 @@ layers:
   - ←
   - ↓
   - →
-  - {t: ▽, type: trans}
+  - DEL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -394,8 +394,8 @@ layers:
   - MUTE
   - VOL DN
   - VOL UP
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - BRI DN
+  - BRI UP
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -403,7 +403,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
+  - DEL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
