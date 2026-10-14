@@ -51,6 +51,9 @@
     active-layers = <BIT(SCROLL_L)>;
 };
 
+&lt { flavor = "balanced"; quick-tap-ms = <175>; };
+&mt { flavor = "balanced"; quick-tap-ms = <175>; };
+
 &trackball_r {cpi = <600>; };
 &trackball_l {cpi = <600>; };
 
@@ -84,6 +87,14 @@
         )
     };
     behaviors {
+        // Shift + Backspace = Delete (right outer thumb)
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         // ctrl+h as backspace
 
         hbackspace: h_ctrl_backspace {
@@ -155,7 +166,7 @@
             &kp TAB                    &kp Q         &kp W     &kp E     &kp R         &kp T      &kp Y         &kp U              &kp I     &kp O      &kp P     &kp LBKT
             &kp LCTRL                  &kp A         &kp S     &kp D     &kp F         &kp G      &hbackspace   &jenter            &kp K     &kp L      &kp SEMI  &kp SQT
             &kp LSHIFT                 &kp Z         &kp X     &kp C     &kp V         &kp B      &kp B         &kp N              &kp M     &kp COMMA  &kp DOT   &kp FSLH
-            &mo CONFIG_L  &kp LWIN  &kp LALT  &kp SPACE &mo LEFT_L     &mo RIGHT_L   &kp SPACE          &kp RALT  &kp RWIN
+            &lt CONFIG_L ESC  &kp LWIN  &kp LALT  &kp SPACE &lt LEFT_L LANG1     &lt RIGHT_L ENTER   &bspc_del          &kp RALT  &kp RWIN
             &out OUT_TOG  &out_bt_nxt                                                    &kp UP        &kp LEFT           &kp DOWN  &kp RIGHT
             &none         &none  &none     &none                                  &mo SCROLL_L  &mo TRACKBALL_L2    &none     &none
             >;
@@ -167,7 +178,7 @@
             &trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
             &trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
             &trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
-            &trans  &trans    &mt LALT LANG2  &trans  &lt LEFT_L LANG2  &lt RIGHT_L LANG1  &trans  &mt RALT LANG1  &trans
+            &trans  &trans    &mt LALT LANG2  &trans  &lt LEFT_L LANG1  &lt RIGHT_L ENTER  &trans  &mt RALT LANG1  &trans
             &trans  &trans                                                    &trans          &trans  &trans  &trans
             &trans  &trans  &trans    &trans                                  &trans          &trans  &trans  &trans
             >;
@@ -179,7 +190,7 @@
             &trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
             &trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
             &trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
-            &trans  &kp LALT  &mt LCMD LANG2  &trans  &lt LEFT_L LANG2  &lt RIGHT_L LANG1  &trans  &mt RCMD LANG1  &kp RALT
+            &trans  &kp LALT  &mt LCMD LANG2  &trans  &lt LEFT_L LANG1  &lt RIGHT_L ENTER  &trans  &mt RCMD LANG1  &kp RALT
             &trans  &trans                                                    &trans          &trans  &trans  &trans
             &trans  &trans  &trans    &trans                                  &trans          &trans  &trans  &trans
             >;
@@ -191,7 +202,7 @@
             &trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
             &trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
             &trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
-            &trans  &kp LALT  &mt LCMD LANG2  &trans  &lt LEFT_L LANG2  &lt RIGHT_L LANG1  &trans  &mt RCMD LANG1  &kp RALT
+            &trans  &kp LALT  &mt LCMD LANG2  &trans  &lt LEFT_L LANG1  &lt RIGHT_L ENTER  &trans  &mt RCMD LANG1  &kp RALT
             &trans  &trans                                                    &trans          &trans  &trans  &trans
             &trans  &trans  &trans    &trans                                  &trans          &trans  &trans  &trans
             >;
@@ -210,25 +221,27 @@
         };
 
         left_layer {
-            display-name = "Left";
+            display-name = "Num";
 
+            // Numbers stay on the top row like a normal keyboard; Shift+number gives !@#$% as usual.
+            // Symbols that are not on the base layer sit on the right home row; F1-F10 on the left.
             bindings = <
-            &kp ESC  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp RBKT
-            &trans   &kp N1    &kp N2  &kp N3    &kp N4    &kp N5        &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp BACKSLASH
-            &trans   &trans    &trans  &trans    &trans    &trans        &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp RSHIFT
-            &trans    &trans  &trans    &trans    &trans        &trans     &trans     &trans     &trans
+            &kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5        &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
+            &trans   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5        &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
+            &trans   &kp F6  &kp F7  &kp F8  &kp F9  &kp F10       &kp TILDE  &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE
+            &trans    &trans  &trans    &trans    &trans        &kp ENTER  &kp DEL    &trans     &trans
             &trans   &trans                                              &trans     &trans     &trans     &trans
             &trans   &trans    &trans  &trans                            &trans     &trans     &trans     &trans
             >;
         };
 
         right_layer {
-            display-name = "Right";
+            display-name = "Nav";
             bindings = <
-            &trans  &trans  &trans  &trans  &trans  &trans  &trans        &kp PG_UP     &kp UP        &kp PG_DN  &trans  &kp C_AL_LOCK
-            &trans  &trans  &trans  &trans  &trans  &trans  &trans        &kp LEFT      &kp DOWN      &kp RIGHT  &trans  &trans
-            &trans  &trans  &trans  &trans  &trans  &trans  &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &trans     &trans  &trans
-            &trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans        &trans
+            &trans  &trans  &trans  &trans  &trans  &trans  &kp HOME      &kp PG_UP     &kp UP        &kp PG_DN  &kp END   &kp C_AL_LOCK
+            &trans  &trans  &trans  &trans  &trans  &trans  &trans        &kp LEFT      &kp DOWN      &kp RIGHT  &kp DEL   &trans
+            &trans  &trans  &trans  &trans  &trans  &trans  &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN &kp C_BRI_UP &trans
+            &trans  &trans  &trans  &trans  &trans  &trans        &kp DEL       &trans        &trans
             &trans  &trans                                  &trans        &trans        &trans        &trans
             &trans  &trans  &trans  &trans                  &none         &none         &trans        &trans
             >;
