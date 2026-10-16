@@ -99,9 +99,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: LANG2, h: LALT}
+  - {t: INT MUHENKAN, h: LALT}
   - {t: ▽, type: trans}
-  - {t: LANG1, h: Num}
+  - {t: INT HENKAN, h: Num}
   - {t: ENTER, h: Nav}
   - {t: ▽, type: trans}
   - {t: LANG1, h: RALT}
