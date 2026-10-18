@@ -333,9 +333,9 @@ layers:
   - F10
   - LCTRL
   - LALT
-  - +
-  - '{'
-  - '}'
+  - LWIN
+  - LSHIFT
+  - SPACE
   - '|'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -699,9 +699,9 @@ layers:
   - F10
   - LGUI
   - LALT
-  - +
-  - '{'
-  - '}'
+  - LCTRL
+  - LSHIFT
+  - SPACE
   - '|'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
