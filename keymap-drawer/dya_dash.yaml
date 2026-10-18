@@ -336,7 +336,7 @@ layers:
   - LWIN
   - LSHIFT
   - SPACE
-  - '|'
+  - Gui+L
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -702,7 +702,7 @@ layers:
   - LCTRL
   - LSHIFT
   - SPACE
-  - '|'
+  - Ctl+Gui+Q
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
