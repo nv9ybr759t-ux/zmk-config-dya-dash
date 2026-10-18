@@ -290,12 +290,12 @@
             // Numbers stay on the top row like a normal keyboard; Shift+number gives !@#$% as usual.
             // Symbols that are not on the base layer sit on the right home row; F1-F10 on the left.
             // Right bottom row = modifier row (Ctrl Alt Win Shift Space) so Ctrl+F5, Alt+F4, Win+Space work while the left thumb holds Num.
-            // + { } are still Shift + = [ ].
+            // Outer key = screen lock (Win+L). + { } | are still Shift + = [ ] \.
             // Hold Num + Enter/Nav together = Config.
             bindings = <
             &trans   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5        &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
             &trans   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5        &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
-            &trans   &kp F6  &kp F7  &kp F8  &kp F9  &kp F10       &kp LCTRL  &kp LALT   &kp LWIN   &kp LSHIFT  &kp SPACE  &kp PIPE
+            &trans   &kp F6  &kp F7  &kp F8  &kp F9  &kp F10       &kp LCTRL  &kp LALT   &kp LWIN   &kp LSHIFT  &kp SPACE  &kp LG(L)
             &trans    &trans  &trans    &trans    &trans        &trans     &kp DEL    &trans     &trans
             &trans   &trans                                              &trans     &trans     &trans     &trans
             &trans   &trans    &trans  &trans                            &trans     &trans     &trans     &trans
@@ -368,11 +368,11 @@
         extra1 {
             display-name = "Num Mac";
 
-            // Same as Num, but the right bottom modifier row is Cmd Option Control Shift Space (used from the Mac/iOS layers).
+            // Same as Num, but the right bottom modifier row is Cmd Option Control Shift Space, outer key = screen lock (Ctrl+Cmd+Q) (used from the Mac/iOS layers).
             bindings = <
             &trans   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5        &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
             &trans   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5        &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
-            &trans   &kp F6  &kp F7  &kp F8  &kp F9  &kp F10       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHIFT  &kp SPACE  &kp PIPE
+            &trans   &kp F6  &kp F7  &kp F8  &kp F9  &kp F10       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHIFT  &kp SPACE  &kp LC(LG(Q))
             &trans    &trans  &trans    &trans    &trans        &trans     &kp DEL    &trans     &trans
             &trans   &trans                                              &trans     &trans     &trans     &trans
             &trans   &trans    &trans  &trans                            &trans     &trans     &trans     &trans
