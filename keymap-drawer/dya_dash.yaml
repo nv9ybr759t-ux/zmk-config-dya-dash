@@ -99,7 +99,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: INT MUHENKAN, h: LALT}
+  - LALT
   - {t: ▽, type: trans}
   - {t: INT HENKAN, h: Num}
   - {t: ENTER, h: Nav}
