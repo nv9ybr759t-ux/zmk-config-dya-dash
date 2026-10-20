@@ -236,13 +236,13 @@
         windows_default_layer {
             display-name = "Windows";
 
-            // Microsoft IME on a US layout ignores LANG1/LANG2: tap 21 = Muhenkan (IME off), tap 23 = Henkan (IME on).
-            // Windows side: IME settings > keys: Muhenkan = IME-off, Henkan = IME-on.
+            // Microsoft IME on a US layout ignores LANG1/LANG2: tap 23 = Henkan. 21 = plain Alt (Alt alone, Alt+Tab, Alt+F4 work).
+            // Windows side: IME settings > keys: Henkan = IME-on/off (toggle).
             bindings = <
             &trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
             &trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
             &trans  &trans  &trans    &trans          &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans
-            &trans  &trans    &mt LALT INT_MUHENKAN  &trans  &lt LEFT_L INT_HENKAN  &lt RIGHT_L ENTER  &trans  &mt RALT LANG1  &trans
+            &trans  &trans    &kp LALT  &trans  &lt LEFT_L INT_HENKAN  &lt RIGHT_L ENTER  &trans  &mt RALT LANG1  &trans
             &trans  &trans                                                    &trans          &trans  &trans  &trans
             &trans  &trans  &trans    &trans                                  &trans          &trans  &trans  &trans
             >;
